@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu Config</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://i.pinimg.com/originals/6e/f2/fc/6ef2fc4cbe97acb93e26f6c2637a5cf7.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-shadow: 1px 1px 2px black;
+    }
+
+    .menu {
+      background-color: rgba(0, 0, 0, 0.6);
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .config-item {
+      margin: 20px 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="file"] {
+      margin-top: 5px;
+    }
+
+    .toggle-buttons, .option-buttons {
+      margin-top: 10px;
+    }
+
+    .btn {
+      padding: 8px 12px;
+      margin: 5px 5px 0 0;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-on {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .btn-off {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .btn-option {
+      background-color: #007bff;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <h2>Menu Config</h2>
+
+    <div class="config-item">
+      <label>Config 1 (.mobileconfig):</label>
+      <input type="file" accept=".mobileconfig" id="config1File">
+      <div class="toggle-buttons">
+        <button class="btn btn-on" onclick="toggleConfig('Config 1', 'on')">On</button>
+        <button class="btn btn-off" onclick="toggleConfig('Config 1', 'off')">Off</button>
+      </div>
+    </div>
+
+    <div class="config-item">
+      <label>Config 2 (.mobileconfig):</label>
+      <input type="file" accept=".mobileconfig" id="config2File">
+      <div class="toggle-buttons">
+        <button class="btn btn-on" onclick="toggleConfig('Config 2', 'on')">On</button>
+        <button class="btn btn-off" onclick="toggleConfig('Config 2', 'off')">Off</button>
+      </div>
+    </div>
+
+    <div class="config-item">
+      <label>Fix Rung:</label>
+      <div class="toggle-buttons">
+        <button class="btn btn-on" onclick="toggleConfig('Fix Rung', 'on')">On</button>
+        <button class="btn btn-off" onclick="toggleConfig('Fix Rung', 'off')">Off</button>
+      </div>
+    </div>
+
+    <div class="config-item">
+      <label>Buff Màn (Tần số quét):</label>
+      <div class="option-buttons">
+        <button class="btn btn-option" onclick="selectOption('Buff Màn', '60Hz')">60Hz</button>
+        <button class="btn btn-option" onclick="selectOption('Buff Màn', '120Hz')">120Hz</button>
+        <button class="btn btn-option" onclick="selectOption('Buff Màn', '240Hz')">240Hz</button>
+      </div>
+    </div>
+
+    <div class="config-item">
+      <label>Lựa Chọn FPS:</label>
+      <div class="option-buttons">
+        <button class="btn btn-option" onclick="selectOption('FPS', '60fps')">60fps</button>
+        <button class="btn btn-option" onclick="selectOption('FPS', '90fps')">90fps</button>
+        <button class="btn btn-option" onclick="selectOption('FPS', '120fps')">120fps</button>
+        <button class="btn btn-option" onclick="selectOption('FPS', '240fps')">240fps</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleConfig(name, status) {
+      alert(name + ' đã được bật ' + status.toUpperCase());
+    }
+
+    function selectOption(type, value) {
+      alert(type + ' đã được chọn: ' + value);
+    }
+  </script>
+</body>
+</html>
